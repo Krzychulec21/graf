@@ -32,3 +32,28 @@ public class RandomColorRenderer extends Renderer {
         }
     }
 }
+
+///
+public void drawtriangle(Vec31 A, Vec31 B, Vec31 C, int color) {
+float minx = Integer. MAX_VALUE, maxX = Integer. MIN_VALUE, minY = Integer. MAX_VALUE, maxY = Integer.MIN_VALUE;
+if (A.x > maxX) maxx = A. x;
+if (A.x < minX) minx = A.X;
+if (A.y > maxY) maxY = A. y;
+if (A.y < minY) minY = A.y;
+if (B.x > maxX) maxx = B.X;
+if (B.x < minX) minx = B.x;
+if (B.y > maxY) maxY = B.Y;
+if (B.y < minY) minY = B.y;
+if (C.x > maxX) maxx = C.x;
+if (C.x < minX) minx = C.x;
+if (C.y > maxY) maxY = C.y;
+if (C.y < minY) minY = C.y;
+for (int i=(int)minx; i<maxx; i++) {
+for (int ] = (int) minY; i < maxY; i++) {
+Vec2f P = new Vec2f (1, 1;
+Vec3f vector = barycentric(A, B, C, P);
+if (vector.x >= 0 && vector.y >= 0 && vector. >= 0 && vector.x <= 1 && vector.y <= 1 && vector.z <= 1) K
+double zbuffor = A.z * vector.× + B. * vector.y + C.z * vector. z;
+if (buffor < bufforTable[i][i]) {
+zbufforTable[i][i] = zbuffor;
+render.setRGB(1, 1, color);}}}
